@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New To-Do</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* body {
+        background: repeating-linear-gradient(
+          -45deg,
+          #fff 0px,
+          #fff 10px,
+          #777777 10px,
+          #777777 20px
+        );
+      } */
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+      }
+      .header {
+        background-color: rgba(128, 128, 128, 0.5);
+        text-align: center;
+        padding: 10px;
+      }
+
+      .col-1 {
+        width: 300px;
+      }
+      .col-2 {
+        margin-top: 40px;
+        width: 800px;
+      }
+      .btn-toggel {
+        margin-left: 20px;
+      }
+      img {
+        width: 50px;
+      }
+      .operations {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- adding toggel sidebar -->
+
+    <!-- toggel sidebar end -->
+
+    <!-- mm -->
+    <div class="container">
+      <div class="row">
+        <div class="col col-1">
+          <div
+            class="btn btn-toggel"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasScrolling"
+            aria-controls="offcanvasScrolling"
+          >
+            <img src="./menubutton3033-tklv-200w.png" alt="" />
+          </div>
+          <div
+            class="offcanvas offcanvas-start"
+            data-bs-scroll="true"
+            data-bs-backdrop="false"
+            tabindex="-1"
+            id="offcanvasScrolling"
+            aria-labelledby="offcanvasScrollingLabel"
+            style="width: 300px"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+                Colored with scrolling
+              </h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <aside>
+                <ul>
+                  <li><i class="fas fa-home"></i> Home</li>
+                  <li><i class="fas fa-building"></i> Company</li>
+                  <li><i class="fas fa-dollar-sign"></i> Perks</li>
+                  <li><i class="fas fa-file-contract"></i> Legal</li>
+                  <li><i class="fas fa-credit-card"></i> Payments</li>
+                </ul>
+
+                <ul>
+                  <li><i class="fas fa-headset"></i> Get Help</li>
+                  <li><i class="fas fa-comment"></i> Chat With Us</li>
+                </ul>
+              </aside>
+              <p>
+                Try scrolling the rest of the page to see this option in action.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col col-2">
+          <div class="container">
+            <h1>Today</h1>
+            <div class="header" id="header">
+              <p></p>
+            </div>
+            <div class="body">
+              <h2>On Going</h2>
+
+              <div class="on-going-task">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+              </div>
+              <h2>Completed</h2>
+              <div class="completed-task">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="operations">
+            <img src="./add.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const d = new Date();
+      //   d.format("dd-mm-yy");
+      document.getElementById("header").innerHTML = d;
+    </script>
+  </body>
+</html>
