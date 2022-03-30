@@ -1,280 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calendar</title>
+    <title>Simple Javascript Calendar</title>
+    <link href="calendar.css" rel="stylesheet" />
+    <script async src="calendar.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        /* background: repeating-linear-gradient(
+          -45deg,
+          #fff 0px,
+          #fff 10px,
+          #777777 10px,
+          #777777 20px
+        ); */
+        background-image: url(./assets/pic5.jpg);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        object-fit: cover;
+        max-width: 100vw;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+      }
+      .input-group {
+        width: 600px;
+        /* border-radius: 60px; */
+      }
+      .text {
+        height: 300px;
+      }
+      .btn {
+        width: 150px;
+        /* margin-left: 400px; */
+        align-self: center;
+      }
+      /* .col-1 {
+        width: 300px;
+      }
+      .col-2 {
+        margin-top: 40px;
+        width: 800px;
+      } */
+      .btn-toggel {
+        margin-left: 20px;
+      }
+      h1 {
+        display: flex;
+        justify-content: center;
+      }
+      /* responsive */
+      @media (max-width: 2566px) {
+        .title {
+          margin-left: 140px;
+        }
+        .container .responsive-col {
+          margin-left: 100px;
+        }
+      }
+      @media (max-width: 1500px) {
+        .title {
+          margin-left: -60px;
+        }
+        .container .responsive-col {
+          margin-left: 100px;
+        }
+      }
+      @media (max-width: 1030px) {
+        .title {
+          margin-left: 80px;
+        }
+        .container .responsive-col {
+          margin-left: 210px;
+        }
+      }
+
+      @media (max-width: 770px) {
+        .title {
+          margin-left: 100px;
+        }
+        .container .responsive-col {
+          margin-left: 100px;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .title {
+          margin-left: 350px;
+          color: white;
+        }
+        .container .responsive-col {
+          margin-left: 100px;
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- REFERENCE TAKEN FROM---https://code-boxx.com/simple-pure-javascript-calendar-events/ -->
+    <!-- CODE TAKEN FROM ---https://code-boxx.com/simple-pure-javascript-calendar-events/ -->
+    <div class="container">
+      <div class="row">
+        <div class="col col-1" style="width: 300px">
+          <div
+            class="btn btn-toggel"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasScrolling"
+            aria-controls="offcanvasScrolling"
+          >
+            <img src="./menubutton3033-tklv-200w.png" alt="" />
+          </div>
+          <div
+            class="offcanvas offcanvas-start"
+            data-bs-scroll="true"
+            data-bs-backdrop="false"
+            tabindex="-1"
+            id="offcanvasScrolling"
+            aria-labelledby="offcanvasScrollingLabel"
+            style="width: 300px"
+          >
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
+                Welcome <br />Jyoti Prakash
+              </h5>
+              <button
+                type="button"
+                class="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <a href="./Grocerylist.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  My To-do
+                </button>
+              </a>
+              <a href="./Recipe.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  My Notes
+                </button></a
+              >
+              <a href="./calendar.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Calendar
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
 
-    <div id="cal-wrap">
-      <!-- (A) PERIOD SELECTOR -->
-      <div id="cal-date">
-        <select id="cal-mth"></select>
-        <select id="cal-yr"></select>
+        <div class="col col-2" style="width: 800px; " >
+        <div class="title">
+          <h1>Calendar</h1>
+        </div>
+        <div class="dropdown" style="width: 30px; margin-left: 800px">
+          <a
+            href=""
+            id="dropdownMenuLink"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            ><img src="./arrow-left-solid.svg" alt=""
+          /></a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
+            <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
+          </ul>
+        </div>
+        <div class="container responsive-col">
+          <div id="cal-wrap">
+            <!-- (A) PERIOD SELECTOR -->
+            <div id="cal-date">
+              <select id="cal-mth"></select>
+              <select id="cal-yr"></select>
+            </div>
+
+            <!-- (B) CALENDAR -->
+            <div id="cal-container"></div>
+
+            <!-- (C) EVENT FORM -->
+            <form id="cal-event">
+              <h1 id="evt-head"></h1>
+              <div id="evt-date"></div>
+              <textarea id="evt-details" required></textarea>
+              <input id="evt-close" type="button" value="Close" />
+              <input id="evt-del" type="button" value="Delete" />
+              <input id="evt-save" type="submit" value="Save" />
+            </form>
+          </div>
+        </div>
       </div>
-
-      <!-- (B) CALENDAR -->
-      <div id="cal-container"></div>
-
-      <!-- (C) EVENT FORM -->
-      <form id="cal-event">
-        <h1 id="evt-head"></h1>
-        <div id="evt-date"></div>
-        <textarea id="evt-details" required></textarea>
-        <input id="evt-close" type="button" value="Close" />
-        <input id="evt-del" type="button" value="Delete" />
-        <input id="evt-save" type="submit" value="Save" />
-      </form>
     </div>
-
-    <!-- adding js -->
-    <script>
-      var cal = {
-        // (A) PROPERTIES
-        // (A1) COMMON CALENDAR
-        sMon: false, // Week start on Monday?
-        mName: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ], // Month Names
-
-        // (A2) CALENDAR DATA
-        data: null, // Events for the selected period
-        sDay: 0,
-        sMth: 0,
-        sYear: 0, // Current selected day, month, year
-
-        // (A3) COMMON HTML ELEMENTS
-        hMth: null,
-        hYear: null, // month/year selector
-        hForm: null,
-        hfHead: null,
-        hfDate: null,
-        hfTxt: null,
-        hfDel: null, // event form
-
-        // (B) INIT CALENDAR
-        init: () => {
-          // (B1) GET + SET COMMON HTML ELEMENTS
-          cal.hMth = document.getElementById("cal-mth");
-          cal.hYear = document.getElementById("cal-yr");
-          cal.hForm = document.getElementById("cal-event");
-          cal.hfHead = document.getElementById("evt-head");
-          cal.hfDate = document.getElementById("evt-date");
-          cal.hfTxt = document.getElementById("evt-details");
-          cal.hfDel = document.getElementById("evt-del");
-          document.getElementById("evt-close").onclick = cal.close;
-          cal.hfDel.onclick = cal.del;
-          cal.hForm.onsubmit = cal.save;
-
-          // (B2) DATE NOW
-          let now = new Date(),
-            nowMth = now.getMonth(),
-            nowYear = parseInt(now.getFullYear());
-
-          // (B3) APPEND MONTHS SELECTOR
-          for (let i = 0; i < 12; i++) {
-            let opt = document.createElement("option");
-            opt.value = i;
-            opt.innerHTML = cal.mName[i];
-            if (i == nowMth) {
-              opt.selected = true;
-            }
-            cal.hMth.appendChild(opt);
-          }
-          cal.hMth.onchange = cal.list;
-
-          // (B4) APPEND YEARS SELECTOR
-          // Set to 10 years range. Change this as you like.
-          for (let i = nowYear - 10; i <= nowYear + 10; i++) {
-            let opt = document.createElement("option");
-            opt.value = i;
-            opt.innerHTML = i;
-            if (i == nowYear) {
-              opt.selected = true;
-            }
-            cal.hYear.appendChild(opt);
-          }
-          cal.hYear.onchange = cal.list;
-
-          // (B5) START - DRAW CALENDAR
-          cal.list();
-        },
-
-        // window.addEventListener("load", cal.init),
-        // (C) DRAW CALENDAR FOR SELECTED MONTH
-        list: () => {
-          // (C1) BASIC CALCULATIONS - DAYS IN MONTH, START + END DAY
-          // Note - Jan is 0 & Dec is 11
-          // Note - Sun is 0 & Sat is 6
-          cal.sMth = parseInt(cal.hMth.value); // selected month
-          cal.sYear = parseInt(cal.hYear.value); // selected year
-          let daysInMth = new Date(cal.sYear, cal.sMth + 1, 0).getDate(), // number of days in selected month
-            startDay = new Date(cal.sYear, cal.sMth, 1).getDay(), // first day of the month
-            endDay = new Date(cal.sYear, cal.sMth, daysInMth).getDay(), // last day of the month
-            now = new Date(), // current date
-            nowMth = now.getMonth(), // current month
-            nowYear = parseInt(now.getFullYear()), // current year
-            nowDay =
-              cal.sMth == nowMth && cal.sYear == nowYear ? now.getDate() : null;
-
-          // (C2) LOAD DATA FROM LOCALSTORAGE
-          cal.data = localStorage.getItem("cal-" + cal.sMth + "-" + cal.sYear);
-          if (cal.data == null) {
-            localStorage.setItem("cal-" + cal.sMth + "-" + cal.sYear, "{}");
-            cal.data = {};
-          } else {
-            cal.data = JSON.parse(cal.data);
-          }
-
-          // (C3) DRAWING CALCULATIONS
-          // Blank squares before start of month
-          let squares = [];
-          if (cal.sMon && startDay != 1) {
-            let blanks = startDay == 0 ? 7 : startDay;
-            for (let i = 1; i < blanks; i++) {
-              squares.push("b");
-            }
-          }
-          if (!cal.sMon && startDay != 0) {
-            for (let i = 0; i < startDay; i++) {
-              squares.push("b");
-            }
-          }
-
-          // Days of the month
-          for (let i = 1; i <= daysInMth; i++) {
-            squares.push(i);
-          }
-
-          // Blank squares after end of month
-          if (cal.sMon && endDay != 0) {
-            let blanks = endDay == 6 ? 1 : 7 - endDay;
-            for (let i = 0; i < blanks; i++) {
-              squares.push("b");
-            }
-          }
-          if (!cal.sMon && endDay != 6) {
-            let blanks = endDay == 0 ? 6 : 6 - endDay;
-            for (let i = 0; i < blanks; i++) {
-              squares.push("b");
-            }
-          }
-
-          // (C4) DRAW HTML CALENDAR
-          // Get container
-          let container = document.getElementById("cal-container"),
-            cTable = document.createElement("table");
-          cTable.id = "calendar";
-          container.innerHTML = "";
-          container.appendChild(cTable);
-
-          // First row - Day names
-          let cRow = document.createElement("tr"),
-            days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-          if (cal.sMon) {
-            days.push(days.shift());
-          }
-          for (let d of days) {
-            let cCell = document.createElement("td");
-            cCell.innerHTML = d;
-            cRow.appendChild(cCell);
-          }
-          cRow.classList.add("head");
-          cTable.appendChild(cRow);
-
-          // Days in Month
-          let total = squares.length;
-          cRow = document.createElement("tr");
-          cRow.classList.add("day");
-          for (let i = 0; i < total; i++) {
-            let cCell = document.createElement("td");
-            if (squares[i] == "b") {
-              cCell.classList.add("blank");
-            } else {
-              if (nowDay == squares[i]) {
-                cCell.classList.add("today");
-              }
-              cCell.innerHTML = `<div class="dd">${squares[i]}</div>`;
-              if (cal.data[squares[i]]) {
-                cCell.innerHTML +=
-                  "<div class='evt'>" + cal.data[squares[i]] + "</div>";
-              }
-              cCell.onclick = () => {
-                cal.show(cCell);
-              };
-            }
-            cRow.appendChild(cCell);
-            if (i != 0 && (i + 1) % 7 == 0) {
-              cTable.appendChild(cRow);
-              cRow = document.createElement("tr");
-              cRow.classList.add("day");
-            }
-          }
-
-          // (C5) REMOVE ANY PREVIOUS ADD/EDIT EVENT DOCKET
-          cal.close();
-        },
-        // (D) SHOW EDIT EVENT DOCKET FOR SELECTED DAY
-        show: (el) => {
-          // (D1) FETCH EXISTING DATA
-          cal.sDay = el.getElementsByClassName("dd")[0].innerHTML;
-          let isEdit = cal.data[cal.sDay] !== undefined;
-
-          // (D2) UPDATE EVENT FORM
-          cal.hfTxt.value = isEdit ? cal.data[cal.sDay] : "";
-          cal.hfHead.innerHTML = isEdit ? "EDIT EVENT" : "ADD EVENT";
-          cal.hfDate.innerHTML = `${cal.sDay} ${cal.mName[cal.sMth]} ${
-            cal.sYear
-          }`;
-          if (isEdit) {
-            cal.hfDel.classList.remove("ninja");
-          } else {
-            cal.hfDel.classList.add("ninja");
-          }
-          cal.hForm.classList.remove("ninja");
-        },
-
-        // (E) CLOSE EVENT DOCKET
-        close: () => {
-          cal.hForm.classList.add("ninja");
-        },
-        // (F) SAVE EVENT
-        save: () => {
-          cal.data[cal.sDay] = cal.hfTxt.value;
-          localStorage.setItem(
-            `cal-${cal.sMth}-${cal.sYear}`,
-            JSON.stringify(cal.data)
-          );
-          cal.list();
-          return false;
-        },
-
-        // (G) DELETE EVENT FOR SELECTED DATE
-        del: () => {
-          if (confirm("Delete event?")) {
-            delete cal.data[cal.sDay];
-            localStorage.setItem(
-              `cal-${cal.sMth}-${cal.sYear}`,
-              JSON.stringify(cal.data)
-            );
-            cal.list();
-          }
-        },
-      };
-    </script>
   </body>
 </html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background: white; */
+        /* background: repeating-linear-gradient(
+          -45deg,
+          #fff 0px,
+          #fff 10px,
+          #7777771c 10px,
+          #777777 20px
+        ); */
+        background-image: url(./assets/pic3.jpg);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        object-fit: cover;
+        max-width: 100vw;
+      }
+
+      .img-slider {
+        position: relative;
+        width: 800px;
+        height: 500px;
+        margin: 10px;
+        background: #1d212b;
+      }
+
+      .img-slider .slide {
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        clip-path: circle(0% at 0 50%);
+      }
+
+      .img-slider .slide.active {
+        clip-path: circle(150% at 0 50%);
+        transition: 2s;
+        transition-property: clip-path;
+      }
+
+      .img-slider .slide img {
+        z-index: 1;
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .img-slider .slide .info {
+        position: absolute;
+        top: 0;
+        padding: 15px 30px;
+      }
+
+      .img-slider .slide .info h2 {
+        color: #fff;
+        font-size: 40px;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 2px;
+      }
+
+      .img-slider .navigation {
+        z-index: 2;
+        position: absolute;
+        display: flex;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .img-slider .navigation .btn {
+        background: rgba(255, 255, 255, 0.5);
+        width: 12px;
+        height: 12px;
+        margin: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .img-slider .navigation .btn.active {
+        background: #2696e9;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      }
+
+      @media (max-width: 1326px) {
+        .img-slider {
+          width: 600px;
+          height: 375px;
+        }
+
+        .img-slider .slide .info {
+          padding: 10px 25px;
+        }
+
+        .img-slider .slide .info h2 {
+          font-size: 30px;
+        }
+
+        .img-slider .navigation {
+          bottom: 25px;
+        }
+
+        .img-slider .navigation .btn {
+          width: 10px;
+          height: 10px;
+          margin: 8px;
+        }
+      }
+
+      @media (max-width: 710px) {
+        .navbar-brand {
+          font-size: 20px;
+          top: 20px;
+          left: 15px;
+        }
+
+        .img-slider {
+          width: 400px;
+          height: 200px;
+          top: 20px;
+        }
+
+        .img-slider .slide .info {
+          padding: 10px 20px;
+        }
+
+        .img-slider .slide .info h2 {
+          font-size: 30px;
+        }
+
+        .img-slider .navigation {
+          bottom: 15px;
+        }
+
+        .img-slider .navigation .btn {
+          width: 8px;
+          height: 8px;
+          margin: 6px;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .img-slider {
+          width: 400px;
+          height: 400px;
+          margin-left: 30px;
+        }
+
+        .img-slider .slide .info {
+          padding: 10px 10px;
+        }
+
+        .img-slider .slide .info h2 {
+          font-size: 25px;
+        }
+
+        .img-slider .navigation {
+          bottom: 10px;
+        }
+      }
+      .action {
+        display: flex;
+        justify-content: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img-slider">
+      <div class="slide active">
+        <div class="info">
+          <h2>Never Forget Your Tasks.</h2>
+          <br /><br />
+          <h3 style="color: white">Grocery List</h3>
+          <ul style="color: white">
+            <li>Green Vegetables</li>
+            <li>Fruits</li>
+            <li>Marsh melo</li>
+            <li>Rock Salt</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="info">
+          <h2>Save all Your important Stuffs.</h2>
+          <br /><br />
+          <h3 style="color: white">Lemon Juice Recipe</h3>
+          <br />
+          <ul style="color: white">
+            <li>1/2 lime= 0.5oz juice</li>
+            <li>1 lime =1 oz juice</li>
+            <li>8 lime = 1 cup juice</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <div class="btn active"></div>
+        <div class="btn"></div>
+      </div>
+    </div>
+    <a href="./newtodo.html" style="margin-top: 450px; color: black"
+      ><h3>NEXT</h3></a
+    >
+
+    <script type="text/javascript">
+      var slides = document.querySelectorAll(".slide");
+      var btns = document.querySelectorAll(".btn");
+      let currentSlide = 1;
+
+      // Javascript for image slider manual navigation
+      var manualNav = function (manual) {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+
+          btns.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+        });
+
+        slides[manual].classList.add("active");
+        btns[manual].classList.add("active");
+      };
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          manualNav(i);
+          currentSlide = i;
+        });
+      });
+
+      // Javascript for image slider autoplay navigation
+      var repeat = function (activeClass) {
+        let active = document.getElementsByClassName("active");
+        let i = 1;
+
+        var repeater = () => {
+          setTimeout(function () {
+            [...active].forEach((activeSlide) => {
+              activeSlide.classList.remove("active");
+            });
+
+            slides[i].classList.add("active");
+            btns[i].classList.add("active");
+            i++;
+
+            if (slides.length == i) {
+              i = 0;
+            }
+            if (i >= slides.length) {
+              return;
+            }
+            repeater();
+          }, 10000);
+        };
+        repeater();
+      };
+      repeat();
+    </script>
+  </body>
+</html>

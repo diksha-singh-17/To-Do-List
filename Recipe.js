@@ -1,14 +1,14 @@
 
 displayData();
 function displayData(){
-  var str = localStorage.getItem("localData");
+  var str = localStorage.getItem("localData01");
     console.log(str);
     if (str!= null)
-        arr = JSON.parse(str);
-        console.log(arr);
-        document.getElementById('title').innerText=arr[0].title;
-        document.getElementById('description').innerText=arr[0].desc;
-        document.getElementById('textArea').innerText=arr[0].textArea;
+        arr1 = JSON.parse(str);
+        console.log(arr1);
+        document.getElementById('title').innerText=arr1[0].title;
+        document.getElementById('description').innerText=arr1[0].desc;
+        document.getElementById('textArea').innerText=arr1[0].textArea;
 }
 //  deleteData();
 

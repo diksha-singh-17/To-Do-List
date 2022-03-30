@@ -16,8 +16,8 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <!-- <a href="./newtodo.html"></a> -->
-    <style>
+     <!-- <style>
+  
       .btnn {
         background-color: rgba(128, 128, 128, 0.082);
         width: 800px;
@@ -56,6 +56,116 @@
         display: flex;
         justify-content: center;
       }
+      /* responsive */
+
+    </style>  -->
+    <style>
+        body {
+        /* background: repeating-linear-gradient(
+          -45deg,
+          #fff 0px,
+          #fff 10px,
+          #777777 10px,
+          #777777 20px
+        ); */
+        background-image: url(./assets/pic5.jpg);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        object-fit: cover;
+        max-width: 100vw;
+      }
+      .div-conatiner {
+    background-color: #eeeeee;
+    margin-bottom: 5px;
+    padding: 5px;
+    width:600px;
+  margin-left: 400px;
+  }
+  h1{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+  .btn {
+          width: 150px;
+          /* margin-left: 400px; */
+          align-self: center;
+        }
+        @media (max-width: 2566px) {
+          .title {
+          margin-left: 80px;
+        }
+        .div-conatiner {
+    background-color: #eeeeee;
+    margin-bottom: 5px;
+    padding: 12px;
+    width:800px;
+  margin-left: 1000px;
+  }
+  /* .dropdown{
+    margin-left: 250px;
+  } */
+      }
+      @media (max-width: 1500px) {
+        .title {
+          margin-left: 80px;
+        }
+        .div-conatiner {
+    background-color: #eeeeee;
+    margin-bottom: 5px;
+    padding: 5px;
+    width:600px;
+  margin-left: 400px;
+  }
+      }
+      @media (max-width: 1030px) {
+        .title {
+          margin-left: 80px;
+        }
+        .div-conatiner {
+    background-color: #eeeeee;
+    margin-bottom: 5px;
+    padding: 5px;
+    width:600px;
+  margin-left: 250px;
+  }
+      }
+
+      @media (max-width: 770px) {
+
+        .title {
+          margin-left: 80px;
+        }
+        .div-conatiner {
+    background-color: #eeeeee;
+    margin-bottom: 5px;
+    padding: 5px;
+    width:600px;
+  margin-left: 100px;
+  }
+      }
+
+      @media (max-width: 430px) {
+
+        .title {
+          /* display: flex;
+          justify-content: center;
+          justify-items: center;
+          text-align: center; */
+          margin-left: 350px;
+          color: white;
+        }
+        .div-conatiner {
+    background-color: #eeeeee;
+    margin-bottom: 5px;
+    padding: 5px;
+    width:600px;
+  margin-left: 100px;
+  }
+      }
     </style>
   </head>
   <body>
@@ -63,7 +173,7 @@
       <div class="row">
         <div class="col col-1" style="width: 300px;">
           <div
-            class="btn btn-toggel"
+            class=" btn-toggel"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasScrolling"
@@ -92,96 +202,74 @@
               ></button>
             </div>
             <div class="offcanvas-body">
-              <a href="./Grocerylist.html"><button type="button" class="btn btn-primary m-3">
+              <a href="./Grocerylist.html"
+              ><button type="button" class="btn btn-primary m-3">
                 My To-do
               </button>
             </a>
-              <a href="./Recipe.html"> <button type="button" class="btn btn-primary m-3">
+            <a href="./Recipe.html"
+              ><button type="button" class="btn btn-primary m-3">
                 My Notes
               </button>
             </a>
-              <button type="button" class="btn btn-primary m-3">
-                Calendar
-              </button>
+            <a href="./calendar.html"><button type="button" class="btn btn-primary m-3">
+              Calendar
+            </button></a>
             </div>
           </div>
         </div>
 
 
-        <div class="col col-2" style="width: 600px; ">
-          <h1>Notes</h1>
+        <div class="col col-2" style="width: 800px; ">
+          <div class="title">
+            <h1>Notes</h1>
+          </div>
+        
+          <div class="col " style="width: 30px; margin-left: 700px;">
+            <div class="dropdown">
+              <a href=""  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="./arrow-left-solid.svg" alt=""></a>
+            
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
+                <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
+              </ul>
+            </div>
+          </div>
         
           <div class="container">
-      <div class="btnn"><h2 id="title">Lemon Juice</h2></div>
-      <div class="btnn"><h3 id="description">Healthy Drink</h3></div>
-      <div class="list-items">
-        <div class="form-check" id="textArea">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-          />
-          <label class="form-check-label" for="flexCheckDefault"> Oats </label>
-        </div>
+            <div id="stuff" >
+            <h1 id="title"></h1>
+            <h2></h2>
+            <div></div>
+          </div>
 
-        <div class="operations">
-          <button onClick="deleteData()">
-            <img src="./delete.svg" alt="" />
-          </button>
-          <a href="./myNotes.html"><img src="./edit.svg" alt="" /></a>
-          <img src="./add.svg" alt="" />
-        </div>
-      </div>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"
+></script>
+
+  <script>
+      var str = localStorage.getItem("localData01");
+      console.log (str);
+
+if (str!= null){
+  arr1 = JSON.parse(str);
+  console.log(arr1);
+  var htmlText = arr1.map(function(x){
+return `<div class="div-conatiner">
+      <h2> ${x.title}</h2>
+      <h3>${x.desc}</h3>
+      <div> ${x.textArea} </div>
+  </div>
+` ; 
+});
+  }
+    $('body').append(htmlText);
+</script>
+
     </div>
-    </div>
-    <div class="col " style="width: 30px; margin-left: 173px;">
-      <div class="dropdown">
-        <a href=""  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="./arrow-left-solid.svg" alt=""></a>
-      
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
-          <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
-        </ul>
-      </div>
-      <div
-        class="offcanvas offcanvas-start"
-        data-bs-scroll="true"
-        data-bs-backdrop="false"
-        tabindex="-1"
-        id="offcanvasScrolling"
-        aria-labelledby="offcanvasScrollingLabel"
-        style="width: 300px"
-      >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
-            Welcome <br />Jyoti Prakash
-          </h5>
-          <button
-            type="button"
-            class="btn-close text-reset"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="offcanvas-body">
-          <button type="button" class="btn btn-primary m-3">
-            My To-do
-          </button>
-          <button type="button" class="btn btn-primary m-3">
-            My Notes
-          </button>
-          <button type="button" class="btn btn-primary m-3">
-            Calendar
-          </button>
-        </div>
-      </div>
-    </div>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" src="./Recipe.js"></script>
+ 
+
   </body>
 </html>

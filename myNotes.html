@@ -18,13 +18,21 @@
     ></script>
     <style>
       body {
-        background: repeating-linear-gradient(
+        /* background: repeating-linear-gradient(
           -45deg,
           #fff 0px,
           #fff 10px,
           #777777 10px,
           #777777 20px
-        );
+        ); */
+        background-image: url(./assets/pic3.jpg);
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        object-fit: cover;
+        max-width: 100vw;
       }
       .container {
         display: flex;
@@ -41,22 +49,123 @@
       }
       .btn {
         width: 150px;
-        /* margin-left: 400px; */
+        margin-top: 20px;
         align-self: center;
+        background-color: dimgray;
+        border: lightgrey;
       }
-      /* .col-1 {
-        width: 300px;
-      }
-      .col-2 {
-        margin-top: 40px;
-        width: 800px;
-      } */
+
       .btn-toggel {
         margin-left: 20px;
       }
       h1 {
         display: flex;
         justify-content: center;
+      }
+      .next {
+        margin-left: 1000px;
+      }
+      @media (max-width: 2566px) {
+        .input-group {
+          width: 1000px;
+          /* height: 20px; */
+          margin-left: 20px;
+          /* display: flex;
+          justify-content: center;
+          align-items: center; */
+        }
+        .btn {
+          width: 100px;
+          margin-left: 200px;
+        }
+        .responsive {
+          margin-left: 270px;
+          padding: 5px;
+        }
+        .next {
+          margin-left: 1200px;
+        }
+      }
+      @media (max-width: 1500px) {
+        .input-group {
+          width: 700px;
+          /* margin-left: 20px; */
+        }
+        .btn {
+          width: 100px;
+          margin-left: 200px;
+        }
+        .responsive {
+          margin-left: 270px;
+          padding: 5px;
+        }
+        .next {
+          margin-left: 1200px;
+        }
+      }
+      @media (max-width: 1030px) {
+        .input-group {
+          width: 700px;
+          /* margin-left: 20px; */
+        }
+        .btn {
+          width: 100px;
+          margin-left: 200px;
+        }
+        .responsive {
+          margin-left: 270px;
+          padding: 5px;
+        }
+        .next {
+          margin-left: 1200px;
+        }
+      }
+
+      @media (max-width: 770px) {
+        .input-group {
+          width: 700px;
+          margin-left: 130px;
+        }
+        .btn {
+          width: 100px;
+          margin-left: 400px;
+        }
+        .responsive {
+          margin-left: 300px;
+          padding: 10px;
+        }
+        .next {
+          margin-left: 800px;
+        }
+        .title {
+          margin-left: 450px;
+        }
+      }
+
+      @media (max-width: 430px) {
+        .input-group {
+          width: 700px;
+          margin-left: 120px;
+        }
+        .btn {
+          width: 100px;
+          margin-left: 550px;
+        }
+        .responsive {
+          margin-left: 370px;
+          padding: 5px;
+        }
+        .next {
+          margin-left: 800px;
+        }
+        .title {
+          /* display: flex;
+          justify-content: center;
+          justify-items: center;
+          text-align: center; */
+          margin-left: 500px;
+          color: white;
+        }
       }
     </style>
   </head>
@@ -70,7 +179,7 @@
       <div class="row">
         <div class="col col-1" style="width: 300px">
           <div
-            class="btn btn-toggel"
+            class="btn-toggel"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasScrolling"
@@ -108,15 +217,33 @@
               ><button type="button" class="btn btn-primary m-3">
                 My Notes
               </button>
-              <button type="button" class="btn btn-primary m-3">
-                Calendar
-              </button>
+              <a href="./calendar.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Calendar
+                </button></a
+              >
             </div>
           </div>
         </div>
 
         <div class="col col-2" style="width: 600px">
-          <h1>Notes</h1>
+          <div class="title">
+            <h1>Notes</h1>
+          </div>
+          <!-- dopdown -->
+          <div class="dropdown" style="width: 30px; margin-left: 900px">
+            <a
+              href=""
+              id="dropdownMenuLink"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              ><img src="./arrow-left-solid.svg" alt=""
+            /></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
+              <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
+            </ul>
+          </div>
           <div class="container">
             <form action="" id="myForm">
               <div class="input-group mb-3">
@@ -158,79 +285,26 @@
                 />
               </div>
             </form>
-            <div class="form-check form-switch">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="flexSwitchCheckDefault"
-              />
-              <label class="form-check-label" for="flexSwitchCheckDefault"
-                >Add Remainder</label
-              >
+            <div class="form-check form-switch responsive">
+              <div id="formdiv">
+                Add Remainder:<input id="myDate" type="date" />
+                <button onclick="window.initializeClock('clockdiv', 'myDate')">
+                  Start
+                </button>
+              </div>
+              <div id="clockdiv"></div>
             </div>
-            <a
-              id="submit"
-              class="btn btn-primary rounded-pill test"
-              href="./Recipe.html"
-              role="button"
-              >Save</a
-            >
-          </div>
-        </div>
-        <div class="dropdown" style="width: 65px; margin-left: 173px">
-          <a
-            href=""
-            id="dropdownMenuLink"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            ><img src="./arrow-left-solid.svg" alt=""
-          /></a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
-            <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <div
-            class="offcanvas offcanvas-start"
-            data-bs-scroll="true"
-            data-bs-backdrop="false"
-            tabindex="-1"
-            id="offcanvasScrolling"
-            aria-labelledby="offcanvasScrollingLabel"
-            style="width: 300px"
-          >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
-                Welcome <br />Jyoti Prakash
-              </h5>
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <button type="button" class="btn btn-primary m-3">
-                My To-do
-              </button>
-              <button type="button" class="btn btn-primary m-3">
-                My Notes
-              </button>
-              <button type="button" class="btn btn-primary m-3">
-                Calendar
-              </button>
-            </div>
+            <button id="submit" class="btn btn-primary rounded-pill test">
+              Save
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <!-- <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script> -->
+    <a href="./Recipe.html " style="text-decoration: none; color: black"
+      ><h3 class="next">Next</h3></a
+    >
+
     <script type="text/javascript" src="./myNotes.js"></script>
   </body>
 </html>
