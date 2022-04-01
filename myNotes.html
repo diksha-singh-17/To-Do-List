@@ -26,6 +26,7 @@
           #777777 20px
         ); */
         background-image: url(./assets/pic3.jpg);
+        /* opacity: 0.2; */
         height: 100vh;
         background-repeat: no-repeat;
         background-size: cover;
@@ -39,13 +40,14 @@
         justify-content: center;
         flex-direction: column;
         margin: 0;
+      
       }
       .input-group {
-        width: 600px;
-        /* border-radius: 60px; */
+        /* box-shadow: 2px 2px 8px #1d1c1c; */
+        color: #1d1c1c;
       }
       .text {
-        height: 300px;
+        height: 150px;
       }
       .btn {
         width: 150px;
@@ -61,120 +63,24 @@
       h1 {
         display: flex;
         justify-content: center;
+        text-shadow: 8px 8px 8px #1d1c1c;
+      }
+      .form-control{
+        background-color: #606060;
       }
       .next {
         margin-left: 1000px;
       }
-      @media (max-width: 2566px) {
-        .input-group {
-          width: 1000px;
-          /* height: 20px; */
-          margin-left: 20px;
-          /* display: flex;
-          justify-content: center;
-          align-items: center; */
-        }
-        .btn {
-          width: 100px;
-          margin-left: 200px;
-        }
-        .responsive {
-          margin-left: 270px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 1200px;
-        }
-      }
-      @media (max-width: 1500px) {
-        .input-group {
-          width: 700px;
-          /* margin-left: 20px; */
-        }
-        .btn {
-          width: 100px;
-          margin-left: 200px;
-        }
-        .responsive {
-          margin-left: 270px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 1200px;
-        }
-      }
-      @media (max-width: 1030px) {
-        .input-group {
-          width: 700px;
-          /* margin-left: 20px; */
-        }
-        .btn {
-          width: 100px;
-          margin-left: 200px;
-        }
-        .responsive {
-          margin-left: 270px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 1200px;
-        }
-      }
-
-      @media (max-width: 770px) {
-        .input-group {
-          width: 700px;
-          margin-left: 130px;
-        }
-        .btn {
-          width: 100px;
-          margin-left: 400px;
-        }
-        .responsive {
-          margin-left: 300px;
-          padding: 10px;
-        }
-        .next {
-          margin-left: 800px;
-        }
-        .title {
-          margin-left: 450px;
-        }
-      }
-
-      @media (max-width: 430px) {
-        .input-group {
-          width: 700px;
-          margin-left: 120px;
-        }
-        .btn {
-          width: 100px;
-          margin-left: 550px;
-        }
-        .responsive {
-          margin-left: 370px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 800px;
-        }
-        .title {
-          /* display: flex;
-          justify-content: center;
-          justify-items: center;
-          text-align: center; */
-          margin-left: 500px;
-          color: white;
-        }
+      .modal {
+      position: absolute;
+      top: 10px;
+      left: 400px;
       }
     </style>
   </head>
   <body>
     <!-- adding toggel sidebar -->
 
-    <!-- toggel sidebar end -->
-
-    <!-- mm -->
     <div class="container">
       <div class="row">
         <div class="col col-1" style="width: 300px">
@@ -208,15 +114,26 @@
               ></button>
             </div>
             <div class="offcanvas-body">
+              <a href="./newtodo.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  To-do
+                </button>
+              </a>
+              <a href="./myNotes.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Notes
+                </button>
+              </a>
               <a href="./Grocerylist.html"
                 ><button type="button" class="btn btn-primary m-3">
                   My To-do
                 </button>
               </a>
-              <a href="./Recipe.html"></a
-              ><button type="button" class="btn btn-primary m-3">
-                My Notes
-              </button>
+              <a href="./Recipe.html">
+                <button type="button" class="btn btn-primary m-3">
+                  My Notes
+                </button></a
+              >
               <a href="./calendar.html"
                 ><button type="button" class="btn btn-primary m-3">
                   Calendar
@@ -224,29 +141,15 @@
               >
             </div>
           </div>
+              <!-- toggel sidebar end -->
         </div>
-
         <div class="col col-2" style="width: 600px">
           <div class="title">
             <h1>Notes</h1>
           </div>
-          <!-- dopdown -->
-          <div class="dropdown" style="width: 30px; margin-left: 900px">
-            <a
-              href=""
-              id="dropdownMenuLink"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              ><img src="./arrow-left-solid.svg" alt=""
-            /></a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
-              <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
-            </ul>
-          </div>
           <div class="container">
-            <form action="" id="myForm">
-              <div class="input-group mb-3">
+            <div class="row">
+              <div class="col-md-12 col-lg-12 input-group mb-3">
                 <input
                   type="text"
                   id="title"
@@ -257,10 +160,7 @@
                 />
               </div>
               <!-- Description -->
-              <div class="input-group mb-3">
-                <!-- <span class="input-group-text" id="inputGroup-sizing-default"
-            >Description</span
-          > -->
+              <div class=" col-md-12 col-lg-12 input-group mb-3">
                 <input
                   type="text"
                   placeholder="Description"
@@ -271,10 +171,7 @@
                 />
               </div>
               <!-- text -->
-              <div class="input-group mb-3">
-                <!-- <span class="input-group-text" id="inputGroup-sizing-default"
-            >Description</span
-          > -->
+              <div class=" col-md-12 col-lg-12 input-group mb-3">
                 <input
                   type="text"
                   id="textArea"
@@ -284,26 +181,67 @@
                   aria-describedby="inputGroup-sizing-default"
                 />
               </div>
-            </form>
+              </div>
             <div class="form-check form-switch responsive">
               <div id="formdiv">
                 Add Remainder:<input id="myDate" type="date" />
-                <button onclick="window.initializeClock('clockdiv', 'myDate')">
+                <button class="btn-secondary" onclick="window.initializeClock('clockdiv', 'myDate')">
                   Start
                 </button>
               </div>
               <div id="clockdiv"></div>
             </div>
-            <button id="submit" class="btn btn-primary rounded-pill test">
+            <button
+              id="submit"
+              class="btn btn-primary rounded-pill test"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
               Save
             </button>
           </div>
         </div>
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">To-Do</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          Your Notes has been saved...Click here to view.
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <a href="./Recipe.html">
+            <button type="button" class="btn btn-primary">View</button>
+          </a>
+        </div>
       </div>
     </div>
-    <a href="./Recipe.html " style="text-decoration: none; color: black"
+  </div>
+  <!-- Modal Ends -->
+    <!-- <a href="./Recipe.html " style="text-decoration: none; color: black"
       ><h3 class="next">Next</h3></a
-    >
+    > -->
 
     <script type="text/javascript" src="./myNotes.js"></script>
   </body>

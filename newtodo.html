@@ -40,12 +40,11 @@
         flex-direction: column;
         margin: 0;
       }
-      .input-group {
-        width: 600px;
-        /* border-radius: 60px; */
+      .form-control {
+        background-color: #606060;
       }
       .text {
-        height: 300px;
+        height: 150px;
       }
       .btn {
         width: 150px;
@@ -61,112 +60,7 @@
       h1 {
         display: flex;
         justify-content: center;
-      }
-      .next {
-        margin-left: 1000px;
-      }
-      /* responsive */
-      @media (max-width: 2566px) {
-        .input-group {
-          width: 1000px;
-          /* height: 20px; */
-          margin-left: 20px;
-          /* display: flex;
-          justify-content: center;
-          align-items: center; */
-        }
-        .btn {
-          width: 100px;
-          margin-left: 200px;
-        }
-        .responsive {
-          margin-left: 270px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 1200px;
-        }
-      }
-      @media (max-width: 1500px) {
-        .input-group {
-          width: 700px;
-          /* margin-left: 20px; */
-        }
-        .btn {
-          width: 100px;
-          margin-left: 200px;
-        }
-        .responsive {
-          margin-left: 270px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 1200px;
-        }
-      }
-      @media (max-width: 1030px) {
-        .input-group {
-          width: 700px;
-          /* margin-left: 20px; */
-        }
-        .btn {
-          width: 100px;
-          margin-left: 200px;
-        }
-        .responsive {
-          margin-left: 270px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 1200px;
-        }
-      }
-
-      @media (max-width: 770px) {
-        .input-group {
-          width: 700px;
-          margin-left: 130px;
-        }
-        .btn {
-          width: 100px;
-          margin-left: 400px;
-        }
-        .responsive {
-          margin-left: 300px;
-          padding: 10px;
-        }
-        .next {
-          margin-left: 800px;
-        }
-        .title {
-          margin-left: 450px;
-        }
-      }
-
-      @media (max-width: 430px) {
-        .input-group {
-          width: 700px;
-          margin-left: 120px;
-        }
-        .btn {
-          width: 100px;
-          margin-left: 550px;
-        }
-        .responsive {
-          margin-left: 370px;
-          padding: 5px;
-        }
-        .next {
-          margin-left: 800px;
-        }
-        .title {
-          /* display: flex;
-          justify-content: center;
-          justify-items: center;
-          text-align: center; */
-          margin-left: 500px;
-          color: white;
-        }
+        text-shadow: 8px 8px 8px #1d1c1c;
       }
     </style>
   </head>
@@ -205,6 +99,17 @@
               ></button>
             </div>
             <div class="offcanvas-body">
+              <a href="./newtodo.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  To-do
+                </button>
+              </a>
+              <a href="./myNotes.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Notes
+                </button>
+              </a>
+
               <a href="./Grocerylist.html"
                 ><button type="button" class="btn btn-primary m-3">
                   My To-do
@@ -228,26 +133,9 @@
           <div class="title">
             <h1>ToDo</h1>
           </div>
-
-          <!-- left arrow -->
-          <div class="dropdown" style="width: 30px; margin-left: 900px">
-            <a
-              class="arrow"
-              href=""
-              id="dropdownMenuLink"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              ><img src="./arrow-left-solid.svg" alt=""
-            /></a>
-
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
-              <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
-            </ul>
-          </div>
           <div class="container">
-            <form action="" id="myForm">
-              <div class="input-group mb-3">
+            <div class="row">
+              <div class="col-md-12 col-lg-12 input-group mb-3">
                 <input
                   type="text"
                   id="title"
@@ -258,7 +146,7 @@
                 />
               </div>
               <!-- Description -->
-              <div class="input-group mb-3">
+              <div class="col-md-12 col-lg-12 input-group mb-3">
                 <input
                   type="text"
                   placeholder="Description"
@@ -269,7 +157,7 @@
                 />
               </div>
               <!-- text -->
-              <div class="input-group mb-3">
+              <div class="col-md-12 col-lg-12 input-group mb-3">
                 <input
                   type="text"
                   id="textArea"
@@ -279,64 +167,70 @@
                   aria-describedby="inputGroup-sizing-default"
                 />
               </div>
-            </form>
+            </div>
+            <!-- </form> -->
             <div class="form-check form-switch responsive">
               <div id="formdiv">
                 <span>Add remainder: &nbsp;</span
                 ><input id="myDate" type="date" />
-                <button onclick="window.initializeClock('clockdiv', 'myDate')">
+                <button
+                  class="btn-secondary"
+                  onclick="window.initializeClock('clockdiv', 'myDate')"
+                >
                   Start
                 </button>
               </div>
               <div id="clockdiv"></div>
             </div>
-            <!-- <a
+            <button
               id="submit"
               class="btn btn-primary rounded-pill test"
-              href=" "
-              role="button"
-              >Save</a
-            > -->
-            <button id="submit" class="btn btn-primary rounded-pill test">
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
               Save
             </button>
           </div>
         </div>
 
-        <div class="col">
-          <div
-            class="offcanvas offcanvas-start"
-            data-bs-scroll="true"
-            data-bs-backdrop="false"
-            tabindex="-1"
-            id="offcanvasScrolling"
-            aria-labelledby="offcanvasScrollingLabel"
-            style="width: 300px"
-          >
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
-                Welcome <br />Jyoti Prakash
-              </h5>
-              <button
-                type="button"
-                class="btn-close text-reset"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="offcanvas-body">
-              <button type="button" class="btn btn-primary m-3">
-                My To-do
-              </button>
-              <button type="button" class="btn btn-primary m-3">
-                My Notes
-              </button>
-              <button type="button" class="btn btn-primary m-3">
-                Calendar
-              </button>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">To-Do</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                Your To-Do has been saved...Click here to view.
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <a href="./Grocerylist.html">
+                  <button type="button" class="btn btn-primary">View</button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+        <!-- Modal Ends -->
       </div>
     </div>
     <script>
@@ -399,8 +293,8 @@
       };
     </script>
 
-    <a href="./Grocerylist.html " style="text-decoration: none; color: black"
+    <!-- <a href="./Grocerylist.html " style="text-decoration: none; color: black"
       ><h3 class="next">Next</h3></a
-    >
+    > -->
   </body>
 </html>

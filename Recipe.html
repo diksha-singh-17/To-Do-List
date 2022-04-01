@@ -16,51 +16,9 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-     <!-- <style>
-  
-      .btnn {
-        background-color: rgba(128, 128, 128, 0.082);
-        width: 800px;
-        border-radius: 20px;
-        margin: 10px;
-        padding: 5px;
-        color: orange;
-      }
-      .list-items {
-        background-color: rgba(128, 128, 128, 0.082);
-        width: 800px;
-        border-radius: 20px;
-        margin: 10px;
-        padding: 5px;
-      }
-      img {
-        width: 50px;
-      }
-      .operations {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-      .btn {
-        width: 150px;
-        /* margin-left: 400px; */
-        align-self: center;
-      }
-      .container {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        margin: 0;
-      }
-      h1{
-        display: flex;
-        justify-content: center;
-      }
-      /* responsive */
 
-    </style>  -->
     <style>
-        body {
+      body {
         /* background: repeating-linear-gradient(
           -45deg,
           #fff 0px,
@@ -77,103 +35,36 @@
         object-fit: cover;
         max-width: 100vw;
       }
-      .div-conatiner {
-    background-color: #eeeeee;
-    margin-bottom: 5px;
-    padding: 5px;
-    width:600px;
-  margin-left: 400px;
-  }
-  h1{
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-  .btn {
-          width: 150px;
-          /* margin-left: 400px; */
-          align-self: center;
-        }
-        @media (max-width: 2566px) {
-          .title {
-          margin-left: 80px;
-        }
-        .div-conatiner {
-    background-color: #eeeeee;
-    margin-bottom: 5px;
-    padding: 12px;
-    width:800px;
-  margin-left: 1000px;
-  }
-  /* .dropdown{
-    margin-left: 250px;
-  } */
+      .div-container {
+        background-color: #eeeeee;
+        margin-bottom: 5px;
+        padding: 5px;
+        margin: 20px;
+        /* width:600px; */
       }
-      @media (max-width: 1500px) {
-        .title {
-          margin-left: 80px;
-        }
-        .div-conatiner {
-    background-color: #eeeeee;
-    margin-bottom: 5px;
-    padding: 5px;
-    width:600px;
-  margin-left: 400px;
-  }
+      h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      @media (max-width: 1030px) {
-        .title {
-          margin-left: 80px;
-        }
-        .div-conatiner {
-    background-color: #eeeeee;
-    margin-bottom: 5px;
-    padding: 5px;
-    width:600px;
-  margin-left: 250px;
-  }
+      .btn {
+        width: 150px;
+        /* margin-left: 400px; */
+        align-self: center;
+        background-color: dimgray;
+        border: lightgrey;
       }
-
-      @media (max-width: 770px) {
-
-        .title {
-          margin-left: 80px;
-        }
-        .div-conatiner {
-    background-color: #eeeeee;
-    margin-bottom: 5px;
-    padding: 5px;
-    width:600px;
-  margin-left: 100px;
-  }
-      }
-
-      @media (max-width: 430px) {
-
-        .title {
-          /* display: flex;
-          justify-content: center;
-          justify-items: center;
-          text-align: center; */
-          margin-left: 350px;
-          color: white;
-        }
-        .div-conatiner {
-    background-color: #eeeeee;
-    margin-bottom: 5px;
-    padding: 5px;
-    width:600px;
-  margin-left: 100px;
-  }
+      .container {
+        margin: 0;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col col-1" style="width: 300px;">
+        <div class="col col-1" style="width: 300px">
           <div
-            class=" btn-toggel"
+            class="btn-toggel"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasScrolling"
@@ -202,74 +93,63 @@
               ></button>
             </div>
             <div class="offcanvas-body">
+              <a href="./newtodo.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  To-do
+                </button>
+              </a>
+              <a href="./myNotes.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Notes
+                </button>
+              </a>
               <a href="./Grocerylist.html"
-              ><button type="button" class="btn btn-primary m-3">
-                My To-do
-              </button>
-            </a>
-            <a href="./Recipe.html"
-              ><button type="button" class="btn btn-primary m-3">
-                My Notes
-              </button>
-            </a>
-            <a href="./calendar.html"><button type="button" class="btn btn-primary m-3">
-              Calendar
-            </button></a>
+                ><button type="button" class="btn btn-primary m-3">
+                  My To-do
+                </button>
+              </a>
+              <a href="./Recipe.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  My Notes
+                </button>
+              </a>
+              <a href="./calendar.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Calendar
+                </button></a
+              >
             </div>
           </div>
         </div>
-
-
-        <div class="col col-2" style="width: 800px; ">
-          <div class="title">
-            <h1>Notes</h1>
-          </div>
-        
-          <div class="col " style="width: 30px; margin-left: 700px;">
-            <div class="dropdown">
-              <a href=""  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="./arrow-left-solid.svg" alt=""></a>
-            
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
-                <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
-              </ul>
-            </div>
-          </div>
-        
-          <div class="container">
-            <div id="stuff" >
-            <h1 id="title"></h1>
-            <h2></h2>
-            <div></div>
-          </div>
-
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"
-></script>
-
-  <script>
-      var str = localStorage.getItem("localData01");
-      console.log (str);
-
-if (str!= null){
-  arr1 = JSON.parse(str);
-  console.log(arr1);
-  var htmlText = arr1.map(function(x){
-return `<div class="div-conatiner">
-      <h2> ${x.title}</h2>
-      <h3>${x.desc}</h3>
-      <div> ${x.textArea} </div>
-  </div>
-` ; 
-});
-  }
-    $('body').append(htmlText);
-</script>
-
+        <div class="col col-2" style="width: 500px">
+          <h1>Notes</h1>
+          <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"
+          ></script>
+          <script>
+            var str = localStorage.getItem("localData01");
+            console.log(str);
+            if (str != null) {
+              arr1 = JSON.parse(str);
+              console.log(arr1);
+              var htmlText = arr1.map(function (x) {
+                return `<div class="div-container">
+                            <div class="row">
+                              <div class="col-md-12 col-lg-12 mb-3">
+                              <h2> ${x.title}</h2>
+                              <h3>${x.desc}</h3>
+                              <div> ${x.textArea} </div>
+                                </div>
+                              </div>
+                            </div>
+                          `;
+              });
+            }
+            $("body").append(htmlText);
+          </script>
+      </div>
     </div>
- 
-
   </body>
 </html>

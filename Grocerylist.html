@@ -17,8 +17,7 @@
       crossorigin="anonymous"
     ></script>
 
-   
-  <style>
+    <style>
       body {
         /* background: repeating-linear-gradient(
           -45deg,
@@ -36,31 +35,36 @@
         object-fit: cover;
         max-width: 100vw;
       }
-    .div-conatiner {
-  background-color: #eeeeee;
-  margin-bottom: 5px;
-  padding: 5px;
-  width:600px;
-margin-left: 400px;
-}
-h1{
+      .div-conatiner {
+        background-color: #eeeeee;
+        margin-bottom: 5px;
+        padding: 5px;
+        /* width: 600px; */
+        margin: 20px;
+      }
+      h1 {
         display: flex;
         align-items: center;
         justify-content: center;
       }
-.btn {
+      .btn {
         width: 150px;
         /* margin-left: 400px; */
         align-self: center;
+        background-color: dimgray;
+        border: lightgrey;
       }
-  </style>
+      .container {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="row">
-        <div class="col col-1" style="width: 300px;">
+        <div class="col col-1" style="width: 300px">
           <div
-            class="btn btn-toggel"
+            class="btn-toggel"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasScrolling"
@@ -89,6 +93,16 @@ h1{
               ></button>
             </div>
             <div class="offcanvas-body">
+              <a href="./newtodo.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  To-do
+                </button>
+              </a>
+              <a href="./myNotes.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Notes
+                </button>
+              </a>
               <a href="./Grocerylist.html"
                 ><button type="button" class="btn btn-primary m-3">
                   My To-do
@@ -99,67 +113,55 @@ h1{
                   My Notes
                 </button>
               </a>
-              <a href="./calendar.html"><button type="button" class="btn btn-primary m-3">
-                Calendar
-              </button></a>
+              <a href="./calendar.html"
+                ><button type="button" class="btn btn-primary m-3">
+                  Calendar
+                </button></a
+              >
             </div>
           </div>
         </div>
-
-      <div class="col col-2" style="width: 500px; ">
-        <!-- <div class="row"> -->
+        <div class="col col-2" style="width: 500px">
           <h1>ToDo</h1>
-          <div class="col " style="width: 30px; margin-left: 700px;">
-            <div class="dropdown">
-              <a href=""  id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><img src="./arrow-left-solid.svg" alt=""></a>
-            
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="./myNotes.html">Notes</a></li>
-                <li><a class="dropdown-item" href="./newtodo.html">ToDo</a></li>
-              </ul>
-            </div>
-            
-          </div>
-        <!-- </div> -->
-          <div id="stuff" style="background-color: aquamarine;">
-            <h1 id="title"></h1>
-            <h2></h2>
-            <div></div>
-          </div>
- 
+        </div>
+
         <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"
-      ></script>
+          src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"
+        ></script>
 
         <script>
-            var str = localStorage.getItem("localData");
-            console.log (str);
+          var str = localStorage.getItem("localData");
+          console.log(str);
 
-      if (str!= null){
-        arr = JSON.parse(str);
-        console.log(arr);
-        // for(i in arr){
-        // // document.getElementById('stuff').innerText=arr[i].title;
-        // // document.getElementById('stuff2').innerText=arr[i].desc;
-        // // document.getElementById('stuff3').innerText=arr[i].textArea;
-        // $('#stuff').append( $('<h1>').html(arr[i].title) );
-        //   $('#stuff').append( $('<h2>').html(arr[i].desc) );
-        //     $('#stuff').append( $('<div>').html(arr[i].textArea) );
-        // }
-        var htmlText = arr.map(function(x){
-  return `<div class="div-conatiner">
+          if (str != null) {
+            arr = JSON.parse(str);
+            console.log(arr);
+            // for(i in arr){
+            // // document.getElementById('stuff').innerText=arr[i].title;
+            // // document.getElementById('stuff2').innerText=arr[i].desc;
+            // // document.getElementById('stuff3').innerText=arr[i].textArea;
+            // $('#stuff').append( $('<h1>').html(arr[i].title) );
+            //   $('#stuff').append( $('<h2>').html(arr[i].desc) );
+            //     $('#stuff').append( $('<div>').html(arr[i].textArea) );
+            // }
+            var htmlText = arr.map(function (x) {
+              return `<div class="div-conatiner">
+                <div class="row">
+            <div class="col-md-12 col-lg-12 mb-3">
             <h2> ${x.title}</h2>
             <h3>${x.desc}</h3>
             <div> ${x.textArea} </div>
         </div>
-  ` ; 
-});
-        }
-          $('body').append(htmlText);
-    </script>
-    </div>
+        </div>
+        </div>
+  `;
+            });
+          }
+          $("body").append(htmlText);
+        </script>
+      </div>
     </div>
   </body>
 </html>
