@@ -134,20 +134,33 @@
             if (str != null) {
               arr1 = JSON.parse(str);
               console.log(arr1);
-              var htmlText = arr1.map(function (x) {
+              var htmlText = arr1.map(function (x,index) {
                 return `<div class="div-container">
-                            <div class="row">
-                              <div class="col-md-12 col-lg-12 mb-3">
-                              <h2> ${x.title}</h2>
-                              <h3>${x.desc}</h3>
-                              <div> ${x.textArea} </div>
-                                </div>
-                              </div>
-                            </div>
+                  <div class="row">
+                    <div class="col-md-8 col-lg-8 mb-3">
+                    <h2> ${x.title}</h2>
+                    <h3>${x.desc}</h3>
+                    <div> ${x.textArea} </div>
+                </div>
+                <div class="col-md-4 col-lg-4 mb-3 d-flex justify-content-end align-items-center">
+                  <div onClick="deleteNotes(${index})"> <img src="./delete.svg"></div>
+                  </div>
+                </div>
+                </div>
                           `;
               });
             }
             $("body").append(htmlText);
+            function deleteNotes(deletenote) {
+            console.log("delete", deletenote);
+            let  arr= localStorage.getItem("localData01");
+            let arr1 = JSON.parse(arr);
+
+            arr1.splice(deletenote, 1);
+            console.log(arr1);
+            localStorage.setItem("localData01", JSON.stringify(arr1));
+            location.reload();
+          }
           </script>
       </div>
     </div>

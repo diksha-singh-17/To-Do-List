@@ -4,6 +4,7 @@ click.addEventListener('click', addData);
 var arr1 = new Array();
 
 function addData(){
+  if(localStorage.getItem("localData01")==null){
     arr1.push({
         title:document.getElementById('title').value,
         desc:document.getElementById('description').value,
@@ -12,9 +13,21 @@ function addData(){
     document.getElementById("title").value = "";
     document.getElementById("description").value = "";
     document.getElementById("textArea").value = "";
-    // if (!localStorage.getItem("localData")){
         localStorage.setItem("localData01", JSON.stringify(arr1));
-// }
+
+
+}else{
+  var data = JSON.parse(localStorage.getItem("localData01"));
+  data.push({
+    title:document.getElementById('title').value,
+    desc:document.getElementById('description').value,
+    textArea:document.getElementById('textArea').value,
+});
+document.getElementById("title").value = "";
+document.getElementById("description").value = "";
+document.getElementById("textArea").value = "";
+    localStorage.setItem("localData01", JSON.stringify(data));
+}
 }
 
 

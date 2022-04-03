@@ -146,20 +146,33 @@
             //   $('#stuff').append( $('<h2>').html(arr[i].desc) );
             //     $('#stuff').append( $('<div>').html(arr[i].textArea) );
             // }
-            var htmlText = arr.map(function (x) {
+            var htmlText = arr.map(function (x, index) {
               return `<div class="div-conatiner">
-                <div class="row">
-            <div class="col-md-12 col-lg-12 mb-3">
-            <h2> ${x.title}</h2>
-            <h3>${x.desc}</h3>
-            <div> ${x.textArea} </div>
-        </div>
-        </div>
-        </div>
-  `;
+                        <div class="row">
+                    <div class="col-md-8 col-lg-8 mb-3">
+                    <h2> ${x.title}</h2>
+                    <h3>${x.desc}</h3>
+                    <div> ${x.textArea} </div>
+                </div>
+                <div class="col-md-4 col-lg-4 mb-3 d-flex justify-content-end align-items-center">
+                  <div onClick="deletetask(${index})"> <img src="./delete.svg"></div>
+                  </div>
+                </div>
+                </div>
+          `;
             });
           }
           $("body").append(htmlText);
+          function deletetask(deleteId) {
+            console.log("delete", deleteId);
+            let avail = localStorage.getItem("localData");
+            let arr = JSON.parse(avail);
+
+            arr.splice(deleteId, 1);
+            console.log(arr);
+            localStorage.setItem("localData", JSON.stringify(arr));
+            location.reload();
+          }
         </script>
       </div>
     </div>
