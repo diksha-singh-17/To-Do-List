@@ -240,16 +240,30 @@
       var arr = new Array();
 
       function addData() {
-        arr.push({
-          title: document.getElementById("title").value,
-          desc: document.getElementById("description").value,
-          textArea: document.getElementById("textArea").value,
-        });
-        document.getElementById("title").value = "";
-        document.getElementById("description").value = "";
-        document.getElementById("textArea").value = "";
+        if (localStorage.getItem("localData") == null) {
+          arr.push({
+            title: document.getElementById("title").value,
+            desc: document.getElementById("description").value,
+            textArea: document.getElementById("textArea").value,
+          });
+          document.getElementById("title").value = "";
+          document.getElementById("description").value = "";
+          document.getElementById("textArea").value = "";
 
-        localStorage.setItem("localData", JSON.stringify(arr));
+          localStorage.setItem("localData", JSON.stringify(arr));
+        } else {
+          var arrNew = JSON.parse(localStorage.getItem("localData"));
+          arrNew.push({
+            title: document.getElementById("title").value,
+            desc: document.getElementById("description").value,
+            textArea: document.getElementById("textArea").value,
+          });
+          document.getElementById("title").value = "";
+          document.getElementById("description").value = "";
+          document.getElementById("textArea").value = "";
+
+          localStorage.setItem("localData", JSON.stringify(arrNew));
+        }
       }
     </script>
     <script>
